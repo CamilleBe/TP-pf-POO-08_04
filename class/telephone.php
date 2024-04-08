@@ -42,4 +42,53 @@ class telephone {
         $this->allume = $allume;
 
     }
+
+    /**
+     * Méthode d'allumage du téléphone
+     *
+     * @return bool|bool
+     */
+    public function allumer()
+    {
+        echo "Allumage du téléphone";
+        $this->allume = true;
+    }
+
+    /**
+     * Méthode pour éteindre le téléphone
+     *
+     * @return void
+     */
+    public function eteindre()
+    {
+        echo "Le téléphone s'éteind";
+        $this->allume = false;
+    }
+
+    /**
+     * Méthode pour envoyer un SMS avec le téléphone
+     *
+     * @param string $destinataire
+     * @param string $message
+     * @return void
+     */
+    public function envoyerSMS(string $destinataire, string $message)
+    {
+        echo "Message envoyé à $destinataire";
+        echo $message;
+    }
+
+    /**
+     * Méthode pour afficher les informations de l'appareil.
+     *
+     * @return void
+     */
+    public function voirInfos()
+    {
+        echo "Informations du téléphone :";
+        echo "Marque : this->$marque";
+        echo "Modèle : this->$modele";
+    }
+
+
 }
