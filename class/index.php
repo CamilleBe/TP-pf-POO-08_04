@@ -1,14 +1,27 @@
 <?php
-require_once 'CompteBancaire.php';
+    require_once 'telephone.php';
 
-$compte = new \CompteBancaire\CompteBancaire("Camille", 1005, "000558616785223");
-echo "<pre>";
-var_dump($compte);
-$compte->voirInfos();
-$compte->deposer(150);
-$compte->voirInfos();
-$compte->retirer(150);
-$compte->voirInfos();
-$compte->retirer(150000);
+    $monTel = new \telephone\telephone("Apple", "iPhone 13 Pro", 50, true);
+    echo "<pre>";
+    var_dump($monTel);
+   /* echo "<br>Modele téléphone : $monTel->modele <br>";
+    echo "Marque téléphone : $monTel->marque <br>";
+    echo "Niveau de batterie : $monTel->batterie% <br>";*/
 
+    $monTel->modele = "iPhone 14";
+    echo "Niveau de batterie :".$monTel->getBatterie(). "%<br>";
+    $monTel->setBatterie(90);
+   /* $monTel->batterie = 90;
+    echo "<br>Modele téléphone : $monTel->modele <br>";
+    echo "Marque téléphone : $monTel->marque <br>";*/
+    echo "Niveau de batterie : $monTel->batterie % <br>";
 
+    /**
+     * Tests des méthodes de notre objet
+     */
+    /*$monTel->voirInfos();
+    $monTel->eteindre();
+    var_dump($monTel);
+    $monTel->allumer();
+    var_dump($monTel);
+    $monTel->envoyerSMS("Fred", "<br>Coucou !");*/

@@ -1,5 +1,7 @@
 <?php
 
+namespace App\RPG;
+
 abstract class Personnage
 {
     public $name;

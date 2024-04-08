@@ -1,8 +1,7 @@
 <?php
 
-namespace CompteBancaire;
 
-class CompteBancaire
+abstract class CompteBancaire
 {
     /**
      * Définition des propriétés du compte bancaire (=> Caractéristiques)
@@ -11,9 +10,9 @@ class CompteBancaire
      * - Nom du titulaire
      */
 
-    public $numCompte;
-    public $solde;
-    public $titulaire;
+    protected $numCompte;
+    protected $solde;
+    protected $titulaire;
 
     /**
      * Définitions des méthodes (=> actions réalisables)
@@ -40,7 +39,7 @@ class CompteBancaire
 
     public function deposer(float $montant)
     {
-        $this->solde += $montant;
+        $this->setSolde(solde += $montant);
     }
 
     public function retirer(float $montant) {
@@ -53,11 +52,16 @@ class CompteBancaire
     public function virement(float $montant, string $destinataire)
     {
       echo "Virement vers le compte de $destinataire : <br>";
-      if ($this->solde - $montant >=0) {
-          $this->solde -= montant;
+      if ($this->setSolde(solde - $montant >=0)) {
+          $this->solde -= \CompteBancaire\montant;
       } else {
           echo "Virement impossible ... <br>";
       }
+    }
+
+    public function setSolde()
+    {
+
     }
 
 }

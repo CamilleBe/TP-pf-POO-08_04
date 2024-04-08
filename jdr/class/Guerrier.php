@@ -1,4 +1,6 @@
 <?php
+namespace App\RPG;
+
 require_once 'Personnage.php';
 class Guerrier extends Personnage
 {
