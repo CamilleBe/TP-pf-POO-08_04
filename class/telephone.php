@@ -13,7 +13,7 @@ class telephone {
      */
     public $marque;
     public $modele;
-    public $batterie;
+    private $batterie;
     public $allume;
     const TAILLE_ECRAN = 6;
 
@@ -41,6 +41,25 @@ class telephone {
         $this->batterie = $batterie;
         $this->allume = $allume;
 
+    }
+
+    /**
+     * @param int|int $batterie
+     */
+    public function getBatterie($batterie)
+    {
+        return $this->batterie;
+    }
+
+    public function setBatterie($pourcentage)
+    {
+        $this->batterie = $pourcentage;
+        return $this;
+    }
+
+    publc function getTAILLE_ECRAN()
+    {
+        return self::TAILLE_ECRAN;
     }
 
     /**
