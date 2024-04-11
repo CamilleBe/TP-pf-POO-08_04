@@ -12,7 +12,7 @@ class EtudiantModel extends Model{
     protected $email;
 
     public function __construct(){
-        $this->table = 'Etudiants';
+        $this->table = 'etudiant';
     }
 
 

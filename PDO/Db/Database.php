@@ -1,20 +1,20 @@
 <?php
-    namespace App\db;
+    namespace App\Db;
 
     use PDO;
     use PDOException;
 
     class Database extends PDO
     {
-        private $instance;
+        private static $instance;
 
         private const DBHOST = 'localhost';
         private const DBUSER = 'root';
-        private const DBPWD = '';
-        private const DBNAME = 'university';
+        private const DBPWD = 'root';
+        private const DBNAME = 'demo_sql';
 
         private function __construct() {
-            $dsn = "mysql:dbname=" . self::DBNAME . "host=" . self::DBHOST;
+            $dsn = "mysql:dbname=" . self::DBNAME . ";host=" . self::DBHOST;
 
             try {
                 parent::__construct($dsn, self::DBUSER, self::DBPWD);
